@@ -18,6 +18,11 @@ class EventController extends Controller
         
     }
 
+
+    public function apaga($id) {
+        Event::findOrFail($id)->delete();
+        return redirect('/');
+    }
     public function create() {
         $produtos = Produto::all();
         $events = Event::all();

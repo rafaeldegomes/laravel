@@ -27,4 +27,13 @@
    
     <button type="submit"> ENVIAR PARA TABELA NOME </button>
 </form>
+
+<form action="/events/1" method="POST">
+@csrf
+@method('DELETE')
+   APGAR
+    
+   
+    <button type="submit"> clique para apagar </button>
+</form>
 @endsection

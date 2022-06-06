@@ -19,6 +19,9 @@ Route::get('/', [EventController::class, 'index']);
 Route::get('/events/create', [EventController::class, 'create']);
 Route::post('/events', [EventController::class, 'store']);
 Route::post('/produtos', [EventController::class, 'prod']);
+Route::delete('/events/{id}', [EventController::class, 'apaga']);
+Route::get('/events/{id}', [EventController::class, 'apaga']);
+
 
 Route::get('/contact', function () {
     return view('contact');
