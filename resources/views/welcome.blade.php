@@ -16,19 +16,18 @@
     <h2>Proximos eventos </h2>
     <p> VEja os eventos aqui </p>
     <div id="cards-container" class="row">
-        @foreach($events as $event)
+        @foreach($produtos as $produto)
         <div class="card col-md-3">
-            <img src="/img/event_placeholder.jpg" alt="{{ $event->title }}">
+            <img src="/img/event_placeholder.jpg" alt="{{ $produto->nome }}">
             <div classe="card-body">
                 <p class="card-date">10/58/5885</p>
-                <h5 class="crd-title">{{ $event->title }} </h5>
+                <h5 class="crd-title">{{ $produto->nome }} </h5>
             </div>
         </div>
         @endforeach
-          @foreach($produts as $produts)
-            {{ $produts->name }}
-        @endforeach
-      
+        @foreach($events as $event)
+            {{ $event->title}}
+         @endforeach
     </div> 
 </div>
 

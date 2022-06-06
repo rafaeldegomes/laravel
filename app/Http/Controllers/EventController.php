@@ -5,21 +5,36 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Event;
-use App\Models\Produts;
+use App\Models\Produto;
 
 class EventController extends Controller
 {
     
     public function index() {
 
+        $produtos = Produto::all();
         $events = Event::all();
-
-        return view('welcome',['events' => $events] );
-
+        return view('welcome',['produtos' => $produtos, 'events' => $events] );
+        
     }
 
     public function create() {
-        return view('events.create');
+        $produtos = Produto::all();
+        $events = Event::all();
+        return view('events.create' , ['produtos' => $produtos, 'events' => $events]);
+    }
+
+
+    public function prod(Request $request){
+    $produto = new Produto;
+
+    $produto->nome = $request->nome;
+   
+    
+
+    $produto->save();
+
+    return redirect('/');
     }
 
     public function store(Request $request){
